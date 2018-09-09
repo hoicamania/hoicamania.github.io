@@ -26,8 +26,11 @@ navbar-links:
   About Me: "aboutme"
   Posts:
     - GDP Forecasting: "https://hoicamania.github.io/2018-09-09-forecasting-gdp/"
- Recommended Blogs:
- Other links:
+ Recommended Links:
+ 	- Data Sets: "https://archive.ics.uci.edu/ml/datasets.html"
+    - Kaggle Competitions: "www.kaggle.com"
+    - Data Visualization Tutorials: "https://flowingdata.com/category/tutorials/"
+    
     
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
