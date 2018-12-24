@@ -86,3 +86,4 @@ def visualize_tree(tree, feature_names):
         exit("Could not run dot, ie graphviz, to "
              "produce visualization")
 
+![]({{site.baseurl}}/)
