@@ -3,9 +3,10 @@ layout: post
 published: false
 title: Boston HMDA Example
 ---
+In 1996 Alicia Munell and several other economists explored mortgage lending data in Boston with a goal of determining if race played a major factor in loan approvals.  
 
 
-    #Import HDAMA file
+    #Import HMDA file
 	import pandas as pd
 	csv = pd.read_csv('C:/Users/dhoic/Desktop/Hdma.csv')
 	df = pd.DataFrame(csv)
