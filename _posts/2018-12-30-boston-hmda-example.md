@@ -5,9 +5,9 @@ title: Boston HMDA Example
 ---
 My first exposure to classification was in a econometrics class where we learned about logistic regression.  The classic case was to use mortgage lending data in Boston with a goal of determining if race played a major factor in loan approvals.  The original paper found [here](https://www.bostonfed.org/publications/research-department-working-paper/1992/mortgage-lending-in-boston-interpreting-hmda-data.aspx) fostered a lot of debate, and still continues to generate buzz to this day. 
 
-It also is a good of example of the delta between how econommists, statisticians, and computer scientists approach analyzing a problem.  Munell et al. used logistic regression to analyze key variables, but does not approach the analysis from a machine learning perspective.  Instead her focus is more on using the coefficients from the logistic regression to answer her research question.
+It also is a good of example of the delta between how econommists, statisticians, and computer scientists approach analyzing a problem.  Munell et al. used logistic regression to analyze key variables, but this might not reveal distinct aspects of the data  not entirely apparent from a traditional linear or logitical modeling approach.  
 
-This analysis starts out by evluating the HDMA data using logistic regression but seeking if the results still hold on test data. 
+This analysis starts out by evluating the HDMA data using logistic regression but seeking if the results still hold on test data to conclude which variables are the most important.
 
     #Import HMDA file
 	import pandas as pd
