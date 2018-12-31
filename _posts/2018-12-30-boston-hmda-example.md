@@ -3,14 +3,40 @@ layout: post
 published: false
 title: Boston HMDA Example
 ---
-In 1996 Alicia Munell and several other economists explored mortgage lending data in Boston with a goal of determining if race played a major factor in loan approvals.  
+My first exposure to classification was in a econometrics class where we learned about logistic regression.  The classic case was to use mortgage lending data in Boston with a goal of determining if race played a major factor in loan approvals.  The original paper found [here](https://www.bostonfed.org/publications/research-department-working-paper/1992/mortgage-lending-in-boston-interpreting-hmda-data.aspx) fostered a lot of debate, and still continues to generate buzz to this day. 
 
+It also is a good of example of the delta between how econommists, statisticians, and computer scientists approach analyzing a problem.  Munell et al. used logistic regression to analyze key variables, which begs the question if other machine learning techniques could be leveraged in delivering the same result.  
 
     #Import HMDA file
 	import pandas as pd
 	csv = pd.read_csv('C:/Users/dhoic/Desktop/Hdma.csv')
 	df = pd.DataFrame(csv)
     df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2381 entries, 0 to 2380
+Data columns (total 20 columns):
+Unnamed: 0     2381 non-null int64
+dir            2381 non-null float64
+hir            2381 non-null float64
+lvr            2381 non-null float64
+ccs            2381 non-null float64
+mcs            2381 non-null float64
+pbcr           2380 non-null object
+dmi            2381 non-null object
+self           2380 non-null object
+single         2381 non-null object
+uria           2381 non-null float64
+comdominiom    2381 non-null int64
+black          2381 non-null object
+deny           2381 non-null object
+black_yes      2381 non-null int32
+deny_yes       2381 non-null int32
+pbcr_yes       2381 non-null int32
+dmi_yes        2381 non-null int32
+self_yes       2381 non-null int32
+single_yes     2381 non-null int32
+dtypes: float64(6), int32(6), int64(2), object(6)
+memory usage: 316.3+ KB
     
     #Clean data and create flags
     import numpy as np
@@ -21,7 +47,7 @@ In 1996 Alicia Munell and several other economists explored mortgage lending dat
 	df['self_yes'] = np.where(df['self'].str.contains('no'), 0, 1)
 	df['single_yes'] = np.where(df['single'].str.contains('no'), 0, 1)
 	df_1 = df.drop('Unnamed: 0',axis=1)
-    
+           
     #Check for missing or NAs
     sns.heatmap(df_1.isnull(),cbar=False,yticklabels=False,cmap = 'viridis')
 	plt.show()
